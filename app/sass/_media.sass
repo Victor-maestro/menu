@@ -1,0 +1,55 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px десктопная версия
+@media screen and (min-width: 1200px)
+  .container
+    width: 1100px
+    margin: 0 auto
+    padding: 0 40px
+  
+  
+// ≥768px планшетная версия
+@media screen and (max-width: 1199px) and (min-width: 768px)
+  .container
+    width: 640px
+    margin: 0 auto
+    padding: 0 20px
+  
+    
+// ≥320px мобильная версия
+@media screen and (max-width: 767px) and (min-width: 320px)
+  .container
+    max-width: 300px
+    margin: 0 auto
+    padding: 0 10px
+  
+    
+/*==========  Mobile First  ==========*/
+
+// ≤320px мобильная версия
+@media screen and (min-width: 320px) and (max-width: 767px)
+  .container
+    max-width: 300px
+    margin: 0 auto
+    padding: 0 10px
+  
+    
+// ≤768px планшетная версия
+@media screen and (min-width: 768px) and (max-width: 1199px)
+  .container
+    width: 640px
+    margin: 0 auto
+    padding: 0 20px
+    
+  
+// ≤1200px десктопная версия
+@media screen and (min-width: 1200px)
+  .container
+    width: 1100px
+    margin: 0 auto
+    padding: 0 40px
+    
+  

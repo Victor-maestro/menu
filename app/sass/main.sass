@@ -1,0 +1,79 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+/* Общие стили */
+::placeholder
+  color: #666
+
+::selection
+  background-color: $accent
+  color: #fff
+
+body
+  position: relative
+  min-width: 320px
+  overflow-x: hidden
+  font-family: $default-font
+  font-size: 16px
+  line-height: 1.6
+  color: $text
+  
+  input, textarea
+    border: #666 1px solid
+    outline: none
+    &:focus:required:invalid
+      border-color: red
+    &:required:valid
+      border-color: green
+
+img
+  display: block
+  max-width: 100%
+  height: auto
+
+b, strong
+  font-weight: bold
+  
+.visually-hidden
+  position: absolute
+  width: 1px
+  height: 1px
+  margin: -1px
+  padding: 0
+  border: 0
+  clip: rect(0 0 0 0)
+  overflow: hidden
+  
+.clearfix
+  &::before,&::after
+    content: ''
+    display: table
+  &::after
+    clear: both
+
+ul 
+  margin: 0
+  padding: 0
+  list-style: none
+  
+/* header */
+
+h1 
+  text-transform: uppercase
+  text-align: center
+
+
+
+
+/* main */
+
+
+/* section-name */
+
+
+/* footer */
+
+
+
+@import "media" // Всегда в конце
