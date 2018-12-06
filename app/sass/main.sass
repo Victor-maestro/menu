@@ -57,23 +57,530 @@ ul
   padding: 0
   list-style: none
   
+  a
+    text-decoration: none
+
+p
+  margin: 25px 0
+  
 /* header */
 
 h1 
-  text-transform: uppercase
   text-align: center
 
 
+/*  index.html  */
 
+.main-nav__list
+  display: flex
+  justify-content: space-around
+  align-items: center
+  flex-wrap: wrap
+  
+  .list__item
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+    width: 33.33%
+    height: 40vh
+    overflow: hidden
+    transition: $slowdown
 
-/* main */
+    a
+      color: #eeeeee
+      font-size: 20px
+      z-index: 2
 
+      &:hover
+        color: #eeeeee
+        text-decoration: underline
 
-/* section-name */
+      &:active
+        color: #bdbdbd
+        text-decoration: none
 
+  .list__item--id, .list__item--ml, .list__item--fx, .list__item--sd, .list__item--os, .list__item--ot
+    &::after
+      content: ''
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      z-index: 1
+      background-size: cover
+      background-position: center
+      opacity: 0
+      transition: $slowdown
 
-/* footer */
+    &:hover
+      color: #000
+      &::after
+        opacity: 1
 
+  .list__item--id
+    background-color: #4caf50
 
+    &::after
+      background-image: url(../img/table_1280.jpg)
 
+  .list__item--ml
+    background-color: #1976d2
+
+    &::after
+      background-image: url(../img/kitchen_1280.jpg)
+
+  .list__item--fx
+    background-color: #3f51b5
+
+    &::after
+      background-image: url(../img/drink_1280.jpg)
+
+  .list__item--sd
+    background-color: #9c27b0
+
+    &::after
+      background-image: url(../img/tablecloth_1280.jpg)
+
+  .list__item--os
+    background-color: #f44336
+
+    &::after
+      background-image: url(../img/coffee_1280.jpg)
+
+  .list__item--ot
+    background-color: #ff5722
+
+    &::after
+      background-image: url(../img/food_1280.jpg)
+  
+  
+/*  multilevel.html  */
+$bgc-multilevel: #1976d2
+$c-multilevel: #dddddd
+$c-hover-multilevel: #ffffff
+
+.nav-multilevel
+  position: relative
+  z-index: 1
+  display: block
+  margin: 0
+  padding: 0
+  line-height: 1
+  font-family: $accent-font
+  border: 0
+  background-color: $bgc-multilevel
+  box-sizing: border-box
+  
+  ul
+    position: relative
+    display: block
+    margin: 0
+    padding: 0
+    line-height: 1
+    border: 0
+    box-sizing: border-box
+    
+    li
+      position: relative
+      display: block
+      margin: 0
+      padding: 0
+      line-height: 1
+      border: 0
+      box-sizing: border-box
+      
+      a
+        position: relative
+        display: block
+        margin: 0
+        padding: 0
+        line-height: 1
+        border: 0
+        box-sizing: border-box
+        
+  #menu-button
+    position: relative
+    display: none
+    margin: 0
+    padding: 0
+    line-height: 1
+    border: 0
+    box-sizing: border-box
+    
+  &:after, > ul:after
+    content: "."
+    display: block
+    height: 0
+    clear: both
+    line-height: 0
+    visibility: hidden
+  
+  > ul > li
+    float: left
+    
+  &.align-center
+    > ul
+      font-size: 0
+      text-align: center
+      > li
+        display: inline-block
+        float: none
+    ul ul
+      text-align: left
+      
+  &.align-right > ul > li
+    float: right
+  > ul > li
+    > a
+      padding: 17px
+      font-weight: 700
+      font-size: 12px
+      letter-spacing: 1px
+      text-decoration: none
+      text-transform: uppercase
+      color: $c-multilevel
+    &:hover > a
+      color: $c-hover-multilevel
+      
+    &.has-sub
+      > a
+        padding-right: 30px
+        &:after
+          content: ''
+          position: absolute
+          display: block
+          top: 22px
+          right: 12px
+          width: 8px
+          height: 2px
+          background-color: $c-multilevel
+        &:before
+          content: ''
+          position: absolute
+          top: 19px
+          right: 15px
+          display: block
+          width: 2px
+          height: 8px
+          background-color: $c-multilevel
+          transition: all .25s ease
+      &:hover > a:before
+        top: 23px
+        height: 0
+      
+  ul ul
+    position: absolute
+    left: -9999px
+    z-index: 2
+    
+  &.align-right ul ul
+    text-align: right
+    
+  ul ul li
+    height: 0
+    transition: all .25s ease
+    
+  li:hover > ul
+    left: auto
+    
+  &.align-right li:hover > ul
+    left: auto
+    right: 0
+    
+  li:hover > ul > li
+    height: 35px
+    
+  ul ul ul
+    top: 0
+    margin-left: 100%
+    
+  &.align-right ul ul ul
+    margin-left: 0
+    margin-right: 100%
+    
+  ul ul li
+    a
+      width: 170px
+      padding: 11px 15px
+      font-weight: 400
+      font-size: 12px
+      text-decoration: none
+      color: $c-multilevel
+      background-color: rgba($bgc-multilevel, 0.8)
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+      
+    &:last-child > a, &.last-item > a
+      border-bottom: 0
+      
+    &:hover > a, a:hover
+      color: $c-hover-multilevel
+    
+    &.has-sub > a:after
+      content: ''
+      position: absolute
+      top: 16px
+      right: 12px
+      display: block
+      width: 8px
+      height: 2px
+      background-color: $c-multilevel
+     
+  &.align-right ul ul li.has-sub > a:after
+    right: auto
+    left: 11px
+    
+  ul ul li.has-sub > a::before
+    content: ''
+    position: absolute
+    top: 13px
+    right: 15px
+    display: block
+    width: 2px
+    height: 8px
+    background-color: $c-multilevel
+    transition: all .25s ease
+    
+  &.align-right ul ul li.has-sub > a:before
+    right: auto
+    left: 14px
+    
+  ul ul > li.has-sub:hover > a:before
+    top: 17px
+    height: 0
+
+@media screen and (max-width: 768px)
+  .nav-multilevel
+    width: 100%
+    ul
+      width: 100%
+      display: none
+      
+    &.align-center > ul
+      text-align: left
+      
+    ul
+      li
+        width: 100%
+        border-top: 1px solid rgba(255, 255, 255, 0.2)
+      ul li
+        height: auto
+        
+    li:hover > ul > li
+      height: auto
+      
+    ul
+      li a
+        width: 100%
+        border-bottom: 0
+      ul
+        position: relative
+        left: 0
+        width: 100%
+        margin: 0
+        text-align: left
+        li a
+          width: 100%
+          border-bottom: 0
+          padding-left: 25px
+        ul li a
+          padding-left: 35px
+        li
+          a
+            color: $c-multilevel
+            background: none
+          &:hover > a, &.active > a
+            color: $c-hover-multilevel
+        ul
+          position: relative
+          left: 0
+          width: 100%
+          margin: 0
+          text-align: left
+          
+    > ul > li
+      float: none
+      
+    &.align-right ul ul
+      position: relative
+      left: 0
+      width: 100%
+      margin: 0
+      text-align: left
+      
+    > ul > li.has-sub > a
+      &:after, &:before
+        display: none
+      
+    ul ul > li.has-sub > a
+      &:after, &:before
+        display: none
+      
+    #menu-button
+      display: block
+      padding: 17px
+      font-weight: 700
+      font-size: 12px
+      text-transform: uppercase
+      color: $c-multilevel
+      cursor: pointer
+      
+      &:after
+        content: ''
+        position: absolute
+        top: 22px
+        right: 17px
+        display: block
+        height: 4px
+        width: 20px
+        border-top: 2px solid #dddddd
+        border-bottom: 2px solid #dddddd
+        
+      &:before
+        content: ''
+        position: absolute
+        top: 16px
+        right: 17px
+        display: block
+        height: 2px
+        width: 20px
+        background-color: $c-multilevel
+        
+      &.menu-opened
+        &:after
+          top: 23px
+          border: 0
+          height: 2px
+          width: 15px
+          background-color: $c-hover-multilevel
+          transform: rotate(45deg)
+        
+        &:before
+          top: 23px
+          background-color: $c-hover-multilevel
+          width: 15px
+          transform: rotate(-45deg)
+        
+    .submenu-button
+      position: absolute
+      z-index: 99
+      right: 0
+      top: 0
+      display: block
+      height: 46px
+      width: 46px
+      border-left: 1px solid rgba(255, 255, 255, 0.2)
+      cursor: pointer
+      
+      &.submenu-opened
+        background-color: rgba($bgc-multilevel, 0.8)
+        
+    ul ul .submenu-button
+      height: 34px
+      width: 34px
+      
+    .submenu-button:after
+      content: ''
+      position: absolute
+      top: 22px
+      right: 19px
+      display: block
+      width: 8px
+      height: 2px
+      background-color: $c-multilevel
+      
+    ul ul .submenu-button:after
+      top: 15px
+      right: 13px
+      
+    .submenu-button
+      &.submenu-opened:after
+        background-color: $c-hover-multilevel
+        
+      &:before
+        content: ''
+        position: absolute
+        top: 19px
+        right: 22px
+        display: block
+        width: 2px
+        height: 8px
+        background-color: $c-multilevel
+        
+    ul ul .submenu-button:before
+      top: 12px
+      right: 16px
+      
+    .submenu-button.submenu-opened:before
+      display: none
+
+/*  fixed.html  */
+.nav-fixed
+  display: flex
+  justify-content: flex-end
+  align-items: center
+  min-height: 80px
+  background-color: rgba(#3f51b5, 1)
+  transition: $slowdown
+    
+.nav-fixed__list
+  display: flex
+  justify-content: flex-end
+  align-items: center
+  width: 100%
+  
+  .list__item
+    a
+      padding: 20px 30px
+      font-size: 20px
+      font-family: $accent-font
+      color: #c5cae9
+      transition: $slowdown
+
+      &:hover
+        color: #eeeeee
+
+      &:active
+        color: #7986cb
+        text-decoration: none
+      
+  .list__item--logo
+    margin-right: auto
+    padding: 0 30px
+    transition: $slowdown
+  
+// Классы при использовании плагина headhesive.js, изменения внешнего вида фиксированного меню
+
+.headhesive
+  position: fixed
+  width: 100%
+  transform: translateY(-100%)
+  
+  .nav-fixed
+    min-height: 50px
+    background-color: rgba(#3f51b5, 0.8)
+    
+  .list__item
+    a
+      padding: 10px 15px
+      font-size: 16px
+      color: #ffffff
+
+      &:hover
+        color: #e0e0e0
+        text-decoration: underline
+
+      &:active
+        color: #e0e0e0
+      
+  .list__item--logo
+    padding: 10px 20px
+    img
+      height: 30px
+      
+.headhesive--stick
+  transform: translateY(0)
+
+  
 @import "media" // Всегда в конце

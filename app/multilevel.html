@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
 
-  <title>Шаблоны Меню</title>
+  <title>Многоуровневое адаптивное меню</title>
   <meta name="description" content="">
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,7 +38,32 @@
   <!-- start header -->
   <header class="header">
     <div class="container">
-    
+      
+      <nav class="nav-multilevel">
+        <ul>
+           <li><a href='index.html'>Главная</a></li>
+           <li class='active'><a href='multilevel.html'>Multilevel</a>
+              <ul>
+                 <li><a href='/'>Пункт 1</a>
+                    <ul>
+                       <li><a href='/'>Подпункт 1.1</a></li>
+                       <li><a href='/'>Подпункт 1.2</a></li>
+                    </ul>
+                 </li>
+                 <li><a href='/'>Пункт 2</a>
+                    <ul>
+                       <li><a href='/'>Подпункт 2.1</a></li>
+                       <li><a href='/'>Подпункт 2.1</a></li>
+                    </ul>
+                 </li>
+              </ul>
+           </li>
+           <li><a href='fixed.html'>Fixed</a></li>
+           <li><a href='side.html'>Side</a></li>
+           <li><a href='open_side.html'>Open side</a></li>
+           <li><a href='open_top.html'>Open top</a></li>
+        </ul>
+      </nav>
       
     </div>
   </header>

@@ -20,7 +20,7 @@ var gulp          = require('gulp'),
 gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
-        
+		'app/libs/Headhesive.js/dist/headhesive.min.js',
 		'app/js/common.js', // Всегда в конце
 		])
 	// .pipe(concat('scripts.min.js')) // Конкатенация js (опц.)
