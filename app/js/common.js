@@ -1,28 +1,22 @@
 $(function() {
-  /*
-    // menu-adaptive
-    
+  
+  // menu-adaptive
   $(".toggle-mnu").click(function() {
     $(this).toggleClass("on");
     $(".hidden-mnu").slideToggle();
     return false;
   });
-
-  $(".toggle-mnu_footer").click(function() {
-    $(this).toggleClass("on");
-    $(".hidden-mnu_footer").slideToggle();
-    return false;
-  });
   
-  */
+  
   // fixed.html
   $(document).ready(function(){
     var options = {
-    offset: 100
+    offset: 100 // точка от высоты экрана, появления нового фиксированного меню
     }
 
-    var header = new Headhesive('.header-fixed', options);
+    var header = new Headhesive('.header-fixed', options); // класс для элемента для фиксированного меню
   });
+  
   
   // multilevel.html
   $.fn.menumaker = function(options) {
