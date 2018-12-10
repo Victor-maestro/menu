@@ -21,6 +21,7 @@ gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/Headhesive.js/dist/headhesive.min.js',
+		'app/libs/jQuery.mmenu/dist/jquery.mmenu.all.js',
 		'app/js/common.js', // Всегда в конце
 		])
 	// .pipe(concat('scripts.min.js')) // Конкатенация js (опц.)
@@ -82,7 +83,7 @@ gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
 		]).pipe(gulp.dest('dist'));
 
 	var buildCss = gulp.src([
-		'app/css/main.css',
+		'app/css/*.css',
 		]).pipe(gulp.dest('dist/css'));
 
 	var buildJs = gulp.src([

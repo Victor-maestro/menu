@@ -671,6 +671,162 @@ $c-hover-multilevel: #ffffff
   &.on span:after 
     transform: rotate(-45deg) translate(6px, -7px)
    
-    
+/*  adaptive.html  */
+.container-mmenu
+  display: flex
+  justify-content: flex-end
+  align-items: flex-start
+  min-height: 60px
+  background-color: #ffcdd2
   
+  .mm-logo
+    margin-right: auto
+    padding-top: 5px    
+      
+  .hamburger-inner, .hamburger.is-active .hamburger-inner
+    background-color: #757575
+    
+    &::before, &::after
+      background-color: #757575
+    
+.mm-menu_offcanvas
+  z-index: 1
+  
+.mm-panels 
+  
+  .mm-panel
+    padding-top: 0
+    &::before
+      height: 0
+  
+    .mm-navbar
+      position: relative
+      height: auto
+      border-bottom: none
+
+      .mm-navbar__title
+        height: auto
+        padding: 0
+
+        img
+          margin: 15px auto
+        
+    .mm-navbar + .mm-listview
+      margin-top: 0
+    
+    .mm-listitem__text
+      padding: 20px 0
+      text-align: center
+      color: #616161
+      
+      &:hover
+        color: #9e9e9e
+
+/*  open_side.html  */
+.container-side
+  position: relative
+  height: 100vh
+  background-image: url(../img/food_1280.jpg)
+  background-position: center
+  background-repeat: no-repeat
+  background-size: cover
+  
+.wrap-menu
+  position: relative
+  width: 50px
+  height: 50px
+  cursor: pointer
+
+.wrap-menu--side
+  margin-left: auto
+  
+.menu__open
+  position: absolute
+  top: 10px
+  left: 10px
+  display: block
+  width: 28px
+  height: 28px
+
+  span 
+    position: relative
+    top: 0
+    display: block
+    
+  span:after, span:before 
+    content: ''
+    position: absolute
+    right: 0
+    top: 10px
+
+  span:after
+    top: 20px
+
+  span, span:after, span:before
+    width: 100%
+    height: 4px
+    background-color: #555555
+    backface-visibility: hidden
+    border-radius: 2px
+
+.menu__close
+  position: absolute
+  top: 10px
+  left: 10px
+  display: block
+  width: 28px
+  height: 28px
+
+  span, span:after, span:before
+    width: 100%
+    height: 4px
+    backface-visibility: hidden
+    border-radius: 2px
+  
+  span:after, span:before 
+    content: ""
+    position: absolute
+    right: 0
+    top: 10px
+    background-color: #fbe9e7
+
+  span 
+    position: relative
+    top: 0
+    display: block
+    background-color: transparent
+    
+    &:before 
+      transform: rotate(45deg) translate(0px, 0px)
+
+    &:after 
+      top: 20px
+      transform: rotate(-45deg) translate(7px, -7px)
+    
+.side-menu
+  position: absolute
+  left: -285px
+  z-index: 1
+  width: 285px
+  height: 100%
+  color: #fff
+  background-color: #ff7043
+
+.side-menu__list
+  width: 100%
+
+  .list__item
+    position: relative
+    a
+      display: block
+      padding: 10px 0px 10px 40px
+      font-size: 20px
+      transition: all 0.4s ease-out
+      color: #e0e0e0
+      
+    &:hover
+      background-color: #e64a19
+        
+
+    
 @import "media" // Всегда в конце
